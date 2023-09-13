@@ -1,5 +1,6 @@
 package com.example.springboot.thymeleafdemo;
 
+import com.example.springboot.thymeleafdemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -18,6 +19,17 @@ public class Customer {
   @NotNull(message = "is required")
   @Pattern(regexp = "^[0-9]{4,5}", message = "must be 4 or 5 digits")
   private String postalCode;
+
+  @CourseCode
+  private String courseCode;
+
+  public String getCourseCode() {
+    return courseCode;
+  }
+
+  public void setCourseCode(String courseCode) {
+    this.courseCode = courseCode;
+  }
 
   public String getPostalCode() {
     return postalCode;
